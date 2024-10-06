@@ -1,0 +1,26 @@
+start server
+* create worker
+
+1. producer
+1.1 get media
+- get media => navigator.mediaDevices.getUserMedia()
+1.2 get rtpCapabilities
+- create router(room) => worker.createRouter
+- get rtpCapabilities => router.rtpCapabilities
+1.3 create device
+- get device => new mediasoupClient.Device()
+- load device => device.load({routerRtpCapabilities:rtpCabilities})
+1.4 create transport
+* option : {
+    listenIps: [ { ip: '0.0.0.0', announcedIp:'192.168.1.152'// public ip }],
+    enableUdp: true,
+    enableTcp: true,
+    preferUdp: true
+}
+- create tranport => await router.createWebRtcTransport(option)
+1.4 send transport
+- transport => device.createSendTransport(params);
+1.5 connect transport
+- producer => await transport.produce({kind,rtpParameters})
+
+2. consume

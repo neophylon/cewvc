@@ -20987,7 +20987,7 @@ const streamSuccess = (stream) => {
 
 const getLocalStream = () => {
   navigator.mediaDevices.getUserMedia({
-    audio: false,
+    audio: true,
     video: {
       width: {
         min: 640,
@@ -21140,6 +21140,7 @@ const connectSendTransport = async () => {
 
     // close video track
   })
+  console.log('produce done');
 }
 
 const createRecvTransport = async () => {
