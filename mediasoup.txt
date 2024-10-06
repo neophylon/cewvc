@@ -24,3 +24,9 @@ start server
 - producer => await transport.produce({kind,rtpParameters})
 
 2. consume
+2.1
+2.2
+2.3
+2.4
+2.5
+
