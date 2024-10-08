@@ -19,6 +19,9 @@ app.get('/', (req, res) => {
   res.send('Hello from mediasoup app!')
 })
 
+app.use('/sfu/live', express.static(path.join(__dirname, 'public/live.html')))
+app.use('/sfu/master', express.static(path.join(__dirname, 'public/master.html')))
+app.use('/sfu/client', express.static(path.join(__dirname, 'public/client.html')))
 app.use('/sfu', express.static(path.join(__dirname, 'public')))
 
 // SSL cert for HTTPS access
