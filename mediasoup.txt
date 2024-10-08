@@ -1,4 +1,12 @@
 start server
+/**
+ * Worker
+ * |-> Router(s)
+ *     |-> Producer Transport(s)
+ *         |-> Producer
+ *     |-> Consumer Transport(s)
+ *         |-> Consumer 
+ **/
 * create worker
 
 1. producer

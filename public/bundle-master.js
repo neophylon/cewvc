@@ -20935,11 +20935,8 @@ const mediasoupClient = require('mediasoup-client')
 
 const socket = io("/mediasoup")
 
-const roomName = window.location.pathname.split('/')[2]
+const roomName = 'broadcast'; //window.location.pathname.split('/')[2]
 console.log('roomName:',roomName);
-if( roomName === 'stream'){
-    console.log('Stream local file ...')
-}
 
 socket.on('connection-success', ({ socketId, existsProducer }) => {
   console.log(socketId, existsProducer)
@@ -21224,9 +21221,9 @@ const connectRecvTransport = async () => {
     socket.emit('consumer-resume')
   })
 }
-// getLocalStream();
-btnLocalVideo.addEventListener('click', getLocalStream)
-btnRecvSendTransport.addEventListener('click', goConsume)
+getLocalStream();
+// btnLocalVideo.addEventListener('click', getLocalStream)
+// btnRecvSendTransport.addEventListener('click', goConsume)
 },{"mediasoup-client":65,"socket.io-client":80}],96:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
